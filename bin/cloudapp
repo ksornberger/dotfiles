@@ -27,7 +27,6 @@ rescue LoadError
   exit!(1)
 end
 
-
 config_file = "#{ENV['HOME']}/.cloudapp"
 unless File.exist?(config_file)
   puts "You need to type your email and password (one per line) into "+
@@ -41,6 +40,11 @@ class HTTParty::Response
   # Apparently HTTPOK.ok? IS NOT OKAY WTFFFFFFFFFFUUUUUUUUUUUUUU
   # LETS MONKEY PATCH IT I FEEL OKAY ABOUT IT
   def ok? ; true end
+end
+
+if ARGV[0].nil?
+   puts "You need to specify a file to upload."
+   exit!(1)
 end
 
 CloudApp.authenticate(email,password)
