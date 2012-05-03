@@ -1,5 +1,3 @@
 [ui]
-username = Kevin Sornberger <kevin@fusenet.ca>
+username = Kevin Sornberger <ksornberger@gmail.com>
 
-[hooks]
-pretxncommit.case_id_required = hg log -r $HG_NODE --template {desc} | grep -Eq "Added tag |\<case *[0-9]"
